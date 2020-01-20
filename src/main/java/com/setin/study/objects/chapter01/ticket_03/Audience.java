@@ -1,4 +1,4 @@
-package com.setin.study.objects.ticket_01;
+package com.setin.study.objects.chapter01.ticket_03;
 
 public class Audience {
 	private Bag bag;
@@ -10,4 +10,7 @@ public class Audience {
 	public Bag getBag() {
 		return bag;
 	}
+	public Long buy(Ticket ticket){
+	    return bag.hold(ticket);
+    }
 }

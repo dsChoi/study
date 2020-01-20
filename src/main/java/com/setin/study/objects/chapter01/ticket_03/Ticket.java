@@ -1,4 +1,4 @@
-package com.setin.study.objects.ticket_02;
+package com.setin.study.objects.chapter01.ticket_03;
 
 public class Ticket {
 	private Long fee;

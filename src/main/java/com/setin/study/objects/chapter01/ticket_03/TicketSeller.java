@@ -1,4 +1,4 @@
-package com.setin.study.objects.ticket_01;
+package com.setin.study.objects.chapter01.ticket_03;
 
 public class TicketSeller {
 
@@ -8,7 +8,11 @@ public class TicketSeller {
 		this.ticketOffice = ticketOffice;
 	}
 
-	public TicketOffice getTicketOffice() {
-		return ticketOffice;
+
+
+	public void sellTo(Audience audience){
+		ticketOffice.sellTicketTo(audience);
 	}
+
+
 }

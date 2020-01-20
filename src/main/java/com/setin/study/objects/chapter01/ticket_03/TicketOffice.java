@@ -1,4 +1,4 @@
-package com.setin.study.objects.ticket_02;
+package com.setin.study.objects.chapter01.ticket_03;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ public class TicketOffice {
 		this.tickets = tickets;
 	}
 
-	public Ticket getTicket() {
+	private Ticket getTicket() {
 		return tickets.remove(0);
 	}
 
@@ -22,5 +22,10 @@ public class TicketOffice {
 
 	public void plusAmount(Long amount) {
 		this.amount += amount;
+	}
+
+
+	public void sellTicketTo(Audience audience){
+	plusAmount(audience.buy(getTicket()));
 	}
 }

@@ -1,4 +1,4 @@
-package com.setin.study.objects.ticket_01;
+package com.setin.study.objects.chapter01.ticket_01;
 
 import java.util.ArrayList;
 import java.util.List;

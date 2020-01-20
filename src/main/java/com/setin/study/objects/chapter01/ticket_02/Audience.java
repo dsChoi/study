@@ -1,4 +1,4 @@
-package com.setin.study.objects.ticket_02;
+package com.setin.study.objects.chapter01.ticket_02;
 
 public class Audience {
 	private Bag bag;
