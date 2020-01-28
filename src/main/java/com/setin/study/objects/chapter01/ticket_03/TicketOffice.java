@@ -3,7 +3,7 @@ package com.setin.study.objects.chapter01.ticket_03;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TicketOffice {
+public class TicketOffice extends Ticket {
 	private Long amount;
 	private List<Ticket> tickets = new ArrayList<>();
 
@@ -16,11 +16,11 @@ public class TicketOffice {
 		return tickets.remove(0);
 	}
 
-	public void minusAmount(Long amount) {
+	private void minusAmount(Long amount) {
 		this.amount -= amount;
 	}
 
-	public void plusAmount(Long amount) {
+	private void plusAmount(Long amount) {
 		this.amount += amount;
 	}
 
