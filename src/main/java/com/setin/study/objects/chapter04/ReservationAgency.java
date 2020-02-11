@@ -1,7 +1,5 @@
 package com.setin.study.objects.chapter04;
 
-import javax.crypto.interfaces.PBEKey;
-
 public class ReservationAgency {
 
     public Reservation reserve(Screening screening, Customer customer, int audienceCount) {
@@ -9,25 +7,25 @@ public class ReservationAgency {
         boolean discountable = false;
 
 
-        for(DiscountCondition condition : movie.getDiscountConditions()){
-            if(condition.getType() == DiscountConditionType.PERIOD) {
+        for (DiscountCondition condition : movie.getDiscountConditions()) {
+            if (condition.getType() == DiscountConditionType.PERIOD) {
                 discountable = screening.getWhenScreened().getDayOfWeek().equals(condition.getDayOfWeek())
                         && condition.getStartTime().compareTo(screening.getWhenScreened().toLocalTime()) <= 0
-                        && condition.getEndTime().compareTo(screening.getWhenScreened().toLocalTime()) <= 0 ;
+                        && condition.getEndTime().compareTo(screening.getWhenScreened().toLocalTime()) <= 0;
 
-            }else{
+            } else {
                 discountable = condition.getSequence() == screening.getSequence();
             }
 
-            if(discountable){
+            if (discountable) {
                 break;
             }
         }
 
         Money fee;
-        if(discountable){
+        if (discountable) {
             Money discountAmount = Money.ZERO;
-            switch (movie.getMovieType()){
+            switch (movie.getMovieType()) {
                 case AMOUNT_DISCOUNT:
                     discountAmount = movie.getDiscountAmount();
                     break;
@@ -40,11 +38,11 @@ public class ReservationAgency {
                     break;
             }
             fee = movie.getFee().minus(discountAmount).times(audienceCount);
-        }else {
+        } else {
             fee = movie.getFee();
         }
 
-        return  new Reservation(customer, screening, fee, audienceCount);
+        return new Reservation(customer, screening, fee, audienceCount);
 
     }
 }
