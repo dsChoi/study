@@ -1,6 +1,7 @@
 package com.setin.study.objects.chapter04.sub04;
 
 import com.setin.study.objects.chapter04.DiscountConditionType;
+import com.setin.study.objects.chapter04.Screening;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
@@ -68,5 +69,9 @@ public class DiscountCondition {
 
     public void setEndTime(LocalTime endTime) {
         this.endTime = endTime;
+    }
+
+    public boolean isSatisfiedBy(Screening screening) {
+        return false;
     }
 }
